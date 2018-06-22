@@ -21,6 +21,12 @@ public class TestRunner {
 			public class LoginRunner extends AbstractTestNGCucumberTests {
 
 	}
+	
+	@AfterClass
+	public static void writeExtentReport(){
+		Reporter.loadXMLConfig(new File("Config/report.xml"));
+
+	}
 	}
 
 

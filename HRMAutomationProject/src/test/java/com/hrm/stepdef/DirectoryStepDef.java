@@ -24,7 +24,6 @@ public class DirectoryStepDef {
 
 	@Given("^User is logged in to OrangeHRM demo account$")
 	public void user_is_logged_in_to_OrangeHRM_demo_account() throws Throwable {
-
 		System.setProperty("webdriver.chrome.driver", "/Users/luxicate/Downloads/chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -41,7 +40,6 @@ public class DirectoryStepDef {
 	public void click_on_Directory() throws Throwable {
 		DirectoryPage pf = new DirectoryPage(driver);
 		pf.directorybtn().click();
-		
 	}
 
 	@When("^Write Existing EmployeeName\"([^\"]*)\"$")
@@ -62,13 +60,60 @@ public class DirectoryStepDef {
 		pf.dirctSearchbtn().click();
 	}
 
+	@Then("^Close Browser$")
+	public void close_Browser() throws Throwable {
+		driver.quit();
+	}
+	
+	//Negative ***************************************************************
+	
+	@Given("^user is logged in to orangeHRM demo account$")
+	public void user_is_logged_in_to_orangeHRM_demo_account() throws Throwable {
+
+		System.setProperty("webdriver.chrome.driver", "/Users/luxicate/Downloads/chromedriver");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+
+		driver.get("http://opensource.demo.orangehrmlive.com/index.php/auth/login");
+		
+		LoginPage pf = new LoginPage(driver);
+		pf.userid().sendKeys("Admin");
+		pf.password().sendKeys("admin");
+		pf.login().click();
+	}
+
+	@When("^click on directory$")
+	public void click_on_directory() throws Throwable {
+		DirectoryPage pf = new DirectoryPage(driver);
+		pf.directorybtn().click();
+		
+	}
+
+	@When("^Write nonexisting EmployeeName\"([^\"]*)\"$")
+	public void write_nonexisting_EmployeeName(String arg1) throws Throwable {
+		DirectoryPage pf = new DirectoryPage(driver);
+		pf.dirctname().sendKeys("IronMan");
+	}
+
+	@When("^select job title$")
+	public void select_job_title() throws Throwable {
+		DirectoryPage pf = new DirectoryPage(driver);
+		pf.JobTitel();
+	}
+
+	@When("^click on search button$")
+	public void click_on_search_button() throws Throwable {
+		DirectoryPage pf = new DirectoryPage(driver);
+		pf.dirctSearchbtn().click();
+	}
+
 	@Then("^I should be able to see the user name with his/her details$")
 	public void i_should_be_able_to_see_the_user_name_with_his_her_details() throws Throwable {
 		System.out.println("You have Successfully Search vaild Employee");
 	}
 
-	@Then("^Close Browser$")
-	public void close_Browser() throws Throwable {
+	@Then("^close browser$")
+	public void close_browser() throws Throwable {
 		driver.quit();
 	}
 

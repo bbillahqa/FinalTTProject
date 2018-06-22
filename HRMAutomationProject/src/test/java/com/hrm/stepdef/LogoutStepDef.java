@@ -50,9 +50,9 @@ public void admin_click_on_Welcom_Admin_link() throws Throwable {
 @When("^Click on LOgout link$")
 public void click_on_LOgout_link() throws Throwable {
 	AdminPage lo= new AdminPage(driver);
-	lo.AdminWelcomebtn().click();	
-	Thread.sleep(100);
-	lo.AdminLogoutbtn().click();
+	lo.logoutbtn().click();
+	
+	
 }
 
 @Then("^Admin Logout Success full$")

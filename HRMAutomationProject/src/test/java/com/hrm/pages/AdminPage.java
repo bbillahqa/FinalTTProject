@@ -86,7 +86,7 @@ public class AdminPage {
 	public WebElement Welcomeadmin() {
 		return Welcomeadmin;
 	}
-	@FindBy(xpath = "//*[@id=\"welcome-menu\"]/ul/li[2]/a") 
+	@FindBy(xpath = "//*[@id=\"welcome-menu\"]/ul/li[2]/a")  
 	WebElement logoutbtn;
 	
 	public WebElement logoutbtn() {

@@ -3,7 +3,7 @@ In order to Search Employee
 I want to go to Search Directory page,Enter employee Name,then Search
 So that i can see Existing Employee details
 
-#@chrome @PositiveSearch
+@chrome @PositiveSearch
 Scenario Outline: Positive-Search Valid Employee
 Given User is logged in to OrangeHRM demo account
 When Click on Directory
@@ -17,15 +17,15 @@ Examples:
 |EmployeeName |
 |Sabbir Saymon|
 
-#@chrome @NegativeSearch
-Scenario Outline: Positive-Search Valid Employee
-Given User is logged in to OrangeHRM demo account
-When Click on Directory
-And Write Existing EmployeeName"<EmployeeName>"
-And Select Job Title
-And Click on Search Button
+@chrome @NegativeSearch
+Scenario Outline: Negative-Search Valid Employee
+Given user is logged in to orangeHRM demo account
+When click on directory
+And Write nonexisting EmployeeName"<EmployeeName>"
+And select job title
+And click on search button
 Then No Record found Message Will displayed
-Then Close Browser
+Then close browser
 
 Examples:
 |EmployeeName |
