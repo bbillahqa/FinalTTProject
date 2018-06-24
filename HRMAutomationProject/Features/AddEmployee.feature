@@ -4,7 +4,7 @@ as a admin
 I want to go to Add employee page,enter FirstName,Lastname,EmployeeId and save
 Confirm the new employee has been registered
 
-#@chrome @PositiveAddEmployee
+@chrome @PositiveAddEmployee
 Scenario Outline: Positive-Add new Employee
 Given  Admin navigate to Admin HomePage
 When Admin click on PIM link
@@ -18,7 +18,7 @@ Examples:
 |FirstName|LastName|EmployeeId|
 |Sabbir   |Saymon  |9090      |
 
-#@chrome @NegativeDeleteEmployee
+@chrome @NegativeDeleteEmployee
 Scenario: Negative-Add new Employee
 Given  Admin navigate to Admin HomePage
 When Admin click on PIM link

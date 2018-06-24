@@ -1,6 +1,6 @@
 Feature: Edit General Information of employees at Orange HRM 
 
-#@chrome 
+@chrome 
 Scenario: Want to edit/change Tax ID General Information in OrangeHRM
 Given User logged in to OrangeHRM demo account.
 When Clicked on Admin

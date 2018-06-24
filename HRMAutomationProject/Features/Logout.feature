@@ -1,14 +1,13 @@
-Feature: Logout from OrgHrm Application
+Feature: Logout from OrangeHrm Application
 In order to log out from application 
 as a Admin
 I want to go to welcome Admin,enter LOgout
 so that i can logout from the application
 
-#@chrome
+@chrome
 Scenario: Admin logout from application
 Given Admin in Admin home page
-When Admin click on Welcom Admin link
-And Click on LOgout link
-Then Admin Logout Success full
+And Welcome Admin MouseHover Welcome Admin, click logout
+Then Admin Logout Successful
 Then Browser close 
 

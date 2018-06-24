@@ -40,26 +40,17 @@ public void admin_in_Admin_home_page() throws Throwable {
 	
 }
 
-@When("^Admin click on Welcom Admin link$")
-public void admin_click_on_Welcom_Admin_link() throws Throwable {
-	AdminPage lo= new AdminPage(driver);
-	lo.Welcomeadmin().click();
-	
+@When("^Welcome Admin MouseHover Welcome Admin, click logout$")
+public void welcome_Admin_MouseHover_Welcome_Admin_click_logout() throws Throwable {
+	Actions action = new Actions(driver);
+	WebElement jt = driver.findElement(By.xpath("//*[@id=\"welcome\"]"));
+	action.moveToElement(jt).moveToElement(driver.findElement(By.xpath("//*[@id=\"welcome-menu\"]/ul/li[2]/a"))).click().build().perform();
 }
 
-@When("^Click on LOgout link$")
-public void click_on_LOgout_link() throws Throwable {
-	AdminPage lo= new AdminPage(driver);
-	lo.logoutbtn().click();
+@Then("^Admin Logout Successful$")
+public void admin_Logout_Successful() throws Throwable {
+	System.out.println("You have successfully logged out of OrangeHRM");
 	
-	
-}
-
-@Then("^Admin Logout Success full$")
-public void admin_Logout_Success_full() throws Throwable {
-	Assert.assertEquals(driver.getCurrentUrl(), "http://opensource.demo.orangehrmlive.com/index.php/auth/login");
-	String actualURL= driver.getCurrentUrl();
-	System.out.println("Actual URL for This page is :" +actualURL);
 }
 
 @Then("^Browser close$")

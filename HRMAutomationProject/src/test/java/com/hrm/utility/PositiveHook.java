@@ -1,8 +1,13 @@
 package com.hrm.utility;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+
+import com.cucumber.listener.Reporter;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -42,6 +47,11 @@ public class PositiveHook {
 /*
 		public static WebDriver getFireDriver() {
 			return fireDriver;*/
-		}
-	
+		
+@AfterClass
+public static void writeExtentReport(){
+	Reporter.loadXMLConfig(new File("Config/report.xml"));
+
+}
+}
 

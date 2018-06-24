@@ -74,9 +74,15 @@ public class AddCandidateStepDef {
 		RecruitmentPage pf = new RecruitmentPage(driver);
 		pf.remail().sendKeys("TalenTech@gmail.com");
 	}
-
-@When("^Enter Contact No \"([^\"]*)\"$")
-public void enter_Contact_No(String arg1) throws Throwable {
+	
+	@When("^Enter Contact number \"([^\"]*)\"$")
+	public void enter_Contact_number(String arg1) throws Throwable {
+		RecruitmentPage pf = new RecruitmentPage(driver);
+		pf.rcontactno().sendKeys("3479876543");
+	
+	}
+	@When("^Enter Contact Number \"([^\"]*)\"$")
+	public void enter_Contact_Number(String arg1) throws Throwable {
 		RecruitmentPage pf = new RecruitmentPage(driver);
 		pf.rcontactno().sendKeys("3479876543");
 	}
